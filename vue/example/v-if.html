@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Hello V-if</title>
+		<script type="text/javascript" src="../assets/js/vue.js"></script>
+	</head>
+	<body>
+		<h1>hello V-if</h1>
+		<hr />
+		<div id='myvue'>
+			<div v-if="isLogin">hello soul</div>
+			<div v-else>sorry</div>
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:'#myvue',
+				data:{
+					isLogin:false
+				}
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Hello V-for!</title>
+		<script type="text/javascript" src="../assets/js/vue.js"></script>
+	</head>
+	<body>
+		<h1>hello v-for</h1>
+		<hr />
+		<div id='myvue'>
+			<div v-for ="item in sortItem">
+				{{item}}
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:'#myvue',
+				data:{
+					items:[12,58,23,46,17,29]
+				},
+				computed:{
+					sortItem:function(){
+						return this.items.sort(sortNum);
+					}
+				}
+			});
+			function sortNum(a,b){
+				return a-b;
+			}
+			
+		</script>
+	</body>
+</html>
