@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Hello v-on</title>
+		<script type="text/javascript" src="../assets/js/vue.js"></script>
+	</head>
+	<body>
+		<h1>My Vue  on</h1>
+		<hr />
+		<div id='myvue'>
+			本场得分：{{score}}<br>
+			<span>
+				<button v-on:click="add">加分</button>
+				<button @click="sub">减分</button><br />
+				<input type="text" v-on:keyup.enter = "onenter" v-model="score1" />
+			</span>
+			
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:'#myvue',
+				data:{
+					score:0,
+					score1:1
+				},
+				methods:{
+					add:function(){
+						this.score++;
+					},
+					sub:function(){
+						this.score--;
+					},
+					onenter:function(){
+						this.score+=parseInt(this.score1)
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>
