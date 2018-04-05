@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Hello word!</title>
+		<script type="text/javascript" src="../assets/js/vue.js"></script>
+	</head>
+	<body>
+		<h1>hello world! My Vue</h1>
+		<hr />
+		<div id='myvue'>
+			<p>before:{{message}}</p>
+			<h3>文本框</h3>>
+			<p>v-model:<input type="text" v-model="message"></p>       <!--原始信息跟随文本内容改变-->
+			<p>v-model.lazy<input type="text" v-model.lazy="message"></p>  <!--失去焦点之后原始信息才会变化-->
+			<p>v-model.number<input type="text" v-model.number="message"></p>  <!--只显示数字，但数字必须是最先被输入的-->
+			<p>v-model.trim<input type="text" v-model.trim="message"></p>  <!--删除空格-->
+<hr />
+			<h3> 文本域</h3>
+			<textarea v-model="message"></textarea>
+			<hr />
+			<h3>多选框</h3>
+			<input type="checkbox" id = "dd" value="dd" v-model="name" />
+			<label for="dd">dd</label>
+			<input type="checkbox" id = "ll" value="ll" v-model="name" />
+			<label for="ll">ll</label>
+			<input type="checkbox" id = "ddll" value="ddll" v-model="name" />
+			<label for="ddll">ddll</label>
+			<p>{{name}}</p>
+			<hr />
+			<h3>单选框</h3>
+			<input type = "radio" id="one" value="男" v-model="sex"/>
+			<label for="one">男</label>
+			<input type = "radio" id="two" value="女" v-model="sex"/>
+			<label for="two">女</label>
+			<p>你的选择：{{sex}}</p>
+		</div>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:'#myvue',
+				data:{
+					message:'Hello MyVue!',
+					name:[],
+					sex: '男'	
+				}
+			});
+		</script>
+	</body>
+</html>
