@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello v-bind</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <style type="text/css">
+        .one{
+            color: #ffccff;
+        }
+    </style>
+</head>
+<body>
+<h1>hello V-bind! My Vue</h1>
+<hr />
+<div id='myvue'>
+    <!--<img src="https://avatars0.githubusercontent.com/u/28799845?s=460&v=4" >-->
+   <p> <img v-bind:src = "ImgSrc" width="200px"/></p>
+    <!--<a href="https://github.com/liulian0519">github</a>-->
+   <p> <a :href="weburl">githubb</a></p>
+    <hr>
+    <div :class="className">1.绑定class属性</div>
+</div>
+
+<script type="text/javascript">
+var app = new Vue({
+    el:'#myvue',
+    data:{
+        ImgSrc :'https://avatars0.githubusercontent.com/u/28799845?s=460&v=4',
+        weburl:'https://github.com/liulian0519',
+        className:'one'
+    }
+})
+
+</script>
+</body>
+</html>
