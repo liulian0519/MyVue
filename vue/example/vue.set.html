@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello vue set</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>hello world! My Vue</h1>
+<hr />
+<div id='myvue'>
+    <ul>
+        <li v-for="item in arr">{{item}}</li>
+    </ul>
+</div>
+<p><button onclick="add()">增加</button></p>
+
+<script type="text/javascript">
+    function add(){
+        // Vue.set(outData,'count',2);
+        // app.count++;
+        // outData.count++;
+        Vue.set(app.arr,1,'ss')
+    }
+    var outData={
+      arr:['aaa','bbb','ccc']
+    }
+    var app = new Vue({
+        el:'#myvue',
+        data:outData
+    })
+
+</script>
+</body>
+</html>
