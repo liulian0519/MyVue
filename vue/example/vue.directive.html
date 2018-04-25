@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello vue-directive</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>hello world! vue-directive 自定义指令</h1>
+<hr />
+<div id='myvue'>
+    <div v-liulian="color">{{num}}</div>
+    <button @click="add">添加</button>
+    <button onclick="unbind()">解绑</button>
+</div>
+
+<script type="text/javascript">
+    function unbind(){
+        app.$destroy();
+    }
+    /*第一种*/
+    // Vue.directive("liulian",function(el,binding){
+    //     //  console.log(el);  //输出 <div>10</div>
+    //     // console.log(binding);  //打印出一个对象name: "liulian", rawName: "v-liulian", value: "#00ddee", expression: "color", modifiers: {…}, …}
+    //     el.style='color:'+binding.value
+    // })
+    /*生命周期*/
+    Vue.directive("liulian",{
+        bind:function (el,binding) {
+            el.style='color:'+binding.value
+            console.log('1-bind');
+        },
+        inserted:function(){
+            console.log('2-inserted');
+        },
+        update:function(){
+            console.log('3-update');
+        },
+        componentUpdated:function(){
+            console.log('4-componentUpdated');
+        },
+        unbind:function(){
+            console.log('5-unbind');
+        }
+    })
+    var app = new Vue({
+        el:'#myvue',
+        data:{
+            num:10,
+            color:'#00ddee'
+        },
+        methods:{
+            add:function(){
+                this.num++;
+            }
+        }
+    })
+</script>
+</body>
+</html>
