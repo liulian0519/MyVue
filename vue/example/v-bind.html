@@ -8,6 +8,9 @@
         .one{
             color: #ffccff;
         }
+        .two{
+            font-size: 40px;
+        }
     </style>
 </head>
 <body>
@@ -20,7 +23,20 @@
    <p> <a :href="weburl">githubb</a></p>
     <hr>
     <div :class="className">1.绑定class属性</div>
+    <div :class="{one:isOk}">2.绑定class判断</div>
+    <div :class="[one,two]">3.绑定class数组</div>
+    <div :class="isOk?one:two">4.绑定class三元运算</div>
+    <hr>
+    <div>
+        <input type="checkbox" id="isOk" v-model="isOk">
+        <label for = "isOk">isOk={{isOk}}</label>
+    </div>
+    <hr>
+    <div :style="{color:color,fontSize:font}">5.绑定样式</div>
+    <div :style="styleObj">5.1.绑定样式zhi 对象绑定</div>
 </div>
+<hr>
+
 
 <script type="text/javascript">
 var app = new Vue({
@@ -28,7 +44,16 @@ var app = new Vue({
     data:{
         ImgSrc :'https://avatars0.githubusercontent.com/u/28799845?s=460&v=4',
         weburl:'https://github.com/liulian0519',
-        className:'one'
+        className:'one',
+        isOk:false,
+        one:'one',
+        two:'two',
+        color:'#aaaadd',
+        font:'20px',
+        styleObj:{
+            color:'#ddffee',
+            fontSize:'40px'
+        }
     }
 })
 
