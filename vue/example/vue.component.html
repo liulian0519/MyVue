@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello vue component</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>hello vue component</h1>
+<hr />
+<div id='myvue'>
+    <liulian></liulian>
+    <dai></dai>
+</div>
+
+<script type="text/javascript">
+    Vue.component('liulian',{
+        template:`<div style="color:rebeccapurple">我是全局liulian组件</div>`
+    })
+    var app = new Vue({
+        el:'#myvue',
+        components:{
+            'dai':{
+                template:`<div style="color:red">我是局部dai组件</div>`
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
