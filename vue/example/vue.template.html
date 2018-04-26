@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello vue template</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>hello world! My vue template</h1>
+<hr />
+<div id='myvue'>
+    {{message}}
+</div>
+<!--第二种-->
+<!--<template id="T1">-->
+    <!--<h1 style="color: #aadded;">我是template标签模板</h1>-->
+<!--</template>-->
+
+<!--第三种-->
+<script type="x-template" id="T2">
+    <h1 style="color: #00d;">我是script标签模板</h1>
+</script>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el:'#myvue',
+        data:{
+            message:'Hello MyVue!'
+        },
+        template:"#T2"   //第三种
+       //  template:"#T1"  第二种
+        // 第一种
+        // template:`
+        //     <h1 style="color:#00dddf">我是选项模板</h1>
+        // `
+
+    })
+
+</script>
+</body>
+</html>
