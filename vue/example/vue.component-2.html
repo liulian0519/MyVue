@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello vue component</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>hello vue component</h1>
+<hr />
+<div id='myvue'>
+    <component v-bind:is="who"></component>
+    <button @click="changeCom">cahnge</button>
+</div>
+
+<script type="text/javascript">
+    var componentA={
+        template:`<div style="color:red">i am componentA</div>`
+    }
+    var componentB={
+        template:`<div style="color:gray">i am componentB</div>`
+    }
+    var componentC={
+        template:`<div style="color:blue">i am componentC</div>`
+    }
+    var app = new Vue({
+        el:'#myvue',
+        data:{
+            who:'componentB'
+        },
+        components:{
+            "componentA":componentA,
+            "componentB":componentB,
+            "componentC":componentC
+        },
+        methods:{
+            changeCom:function(){
+                if(this.who=="componentA"){
+                    this.who="componentB"
+                }else if(this.who=="componentB"){
+                    this.who="componentC"
+                }else{
+                    this.who="componentA"
+                }
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
