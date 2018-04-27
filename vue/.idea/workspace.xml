@@ -20,17 +20,17 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+            <state relative-caret-position="583">
+              <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="methods.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/example/methods.html">
+      <file leaf-file-name="watch.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/example/watch.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="50" lean-forward="true" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+            <state relative-caret-position="499">
+              <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -38,8 +38,8 @@
       <file leaf-file-name="HelloWorld.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/HelloWorld.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="8" lean-forward="true" selection-end-line="25" />
+            <state relative-caret-position="336">
+              <caret line="16" column="28" lean-forward="true" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -69,8 +69,9 @@
         <option value="$PROJECT_DIR$/example/vue.component-2.html" />
         <option value="$PROJECT_DIR$/example/propsDate.html" />
         <option value="$PROJECT_DIR$/example/computed.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/example/methods.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/example/watch.html" />
       </list>
     </option>
   </component>
@@ -156,18 +157,18 @@
       <workItem from="1524630319560" duration="4709000" />
       <workItem from="1524648199503" duration="9883000" />
       <workItem from="1524708753939" duration="6908000" />
-      <workItem from="1524792504627" duration="8080000" />
+      <workItem from="1524792504627" duration="9705000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31291000" />
+    <option name="totallyTimeSpent" value="32916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="762" y="0" width="781" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2125163" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.015645372" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -380,24 +381,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/example/methods.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+        <state relative-caret-position="168">
+          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/HelloWorld.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="8" lean-forward="true" selection-end-line="25" />
+        <state relative-caret-position="336">
+          <caret line="16" column="28" lean-forward="true" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/methods.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="50" lean-forward="true" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+        <state relative-caret-position="583">
+          <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/watch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
         </state>
       </provider>
     </entry>
