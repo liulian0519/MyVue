@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello PropsDate</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>hello PropsDate Option</h1>
+<hr />
+<header></header>
+
+<script type="text/javascript">
+var header_a = Vue.extend({
+    template:`<p>{{message}}-{{a}}</p>`,
+    data:function () {
+        return{
+            message:'hello I am header'
+        }
+    },
+    props:['a']
+});
+new header_a({propsData:{a:12}}).$mount('header')   //挂载 可挂载标签 id class 类似jquery
+
+</script>
+</body>
+</html>
