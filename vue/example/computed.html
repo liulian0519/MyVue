@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>vue computed!</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>vue computed!</h1>
+<hr />
+<div id='myvue'>
+    <p>{{newprice}}</p>
+    <ul>
+        <li v-for="item in news">{{item.title}}-----{{item.date}}</li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    /*不污染原始数据 更改格式或计算*/
+    var newsList=[
+        {title:'这是新闻列表',date:'2018/4/22'},
+        {title:'这是一条新闻',date:'2018/4/24'},
+        {title:'这也是一条新闻',date:'2018/4/26'},
+        {title:'这还是一条新闻',date:'2018/4/27'},
+    ]
+    var app = new Vue({
+        el:'#myvue',
+        data:{
+            price:100,
+            newsList:newsList
+        },
+        computed:{
+            newprice:function () {
+                return this.price='￥'+this.price +'元'
+            },
+            news:function(){
+                return this.newsList.reverse()
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
