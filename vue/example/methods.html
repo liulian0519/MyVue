@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>mthods!</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <!--
+    传值
+    event 类似mouseevent
+    .native
+    构造器外
+    -->
+</head>
+<body>
+<h1>hello methods option</h1>
+<hr />
+<div id='myvue'>
+    {{a}}
+    <p><button @click="add(3)">增加</button></p>
+    <btn @click.native="add(3)"></btn>     <!--必须加native才会生效-->
+</div>
+<p><button onclick="app.add(3)">外部add</button></p>
+
+<script type="text/javascript">
+    var btn = {
+        template:`<Button>组件button</Button>`
+    }
+    var app = new Vue({
+        el:'#myvue',
+        data:{
+            a:1
+        },
+        components:{
+          "btn":btn
+        },
+        methods:{
+            add:function(num){
+                if(num!=''){
+                    this.a+=num;
+                }else{
+                    this.a++
+                }
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
