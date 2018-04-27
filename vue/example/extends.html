@@ -2,30 +2,31 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>mixins</title>
+    <title>extends</title>
     <script type="text/javascript" src="../assets/js/vue.js"></script>
 </head>
 <body>
-<h1>mixins</h1>
+<h1>extends</h1>
 <hr />
 <div id='myvue'>
-    {{a}}
+    <!--{{a}}-->
+    ${a}
     <p><button @click="add">add</button></p>
 </div>
 
 <script type="text/javascript">
-    /*mixins*/
-    var addconsole={
-      updated:function () {
-          console.log('数据发生变化'+this.a);//2
-      }
-    }
-    /*全局api*/
-    Vue.mixin({
+    var extendObj={
         updated:function(){
-            console.log('我是全局')      //1全局的最先执行
+            console.log("我是扩展的updated") //2
+        },
+        methods:{      ///方法鸣一样只执行构造器中的方法
+            add:function(){
+                console.log('我是被扩展出来的方法')
+                this.a++;
+            }
         }
-    })
+
+    }
     var app = new Vue({
         el:'#myvue',
         data:{
@@ -33,14 +34,17 @@
         },
         methods:{
             add:function(){
+                console.log('我是原生的方法')  //1先执行
                 this.a++;
             }
         },
         updated:function(){
-            console.log("我是原生");      ///3原生的后执行  混入先执行
+            console.log("我是原生的updte");      ///3
         },
+        extends:extendObj,
+        delimiters:['${','}']
 
-        mixins:[addconsole]
+
     })
 
 </script>
