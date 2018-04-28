@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>example2 methods</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>example2 methods</h1>
+<hr />
+<div id='myvue'>
+</div>
+<button onclick="destroy()">卸载</button>
+<button onclick="reload()">刷新</button>
+<button onclick="tick()">更新数据</button>
+<script type="text/javascript">
+    var liulian = Vue.extend({
+        template:`<p>{{message}}</p>`,
+        data:function(){
+            return{
+                message:'I am liulian'
+            }
+        },
+        mounted:function(){
+            console.log("mounted 被创建");
+        },
+        destroyed:function(){
+            console.log("destory 销毁了")
+        },
+        updated:function(){
+            console.log("被刷新了✌")
+        }
+    })
+    var vm = new liulian().$mount("#myvue")   //挂载
+    function destroy(){
+        vm.$destroy();
+    }
+    function reload(){
+        vm.$forceUpdate();
+    }
+    function tick(){
+        vm.message="update message la";
+        vm.$nextTick(function(){
+            console.log('message更新完之后我被调用了');
+        })
+    }
+
+</script>
+</body>
+</html>
