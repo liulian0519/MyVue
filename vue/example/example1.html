@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>example methods</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<h1>example methods</h1>
+<hr />
+<div id='myvue'>
+    {{message}}
+</div>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el:'#myvue',
+        data:{
+            message:'Hello MyVue!'
+        },
+        mounted:function (){
+            $('#myvue').html("我是jquery");
+        },
+        methods:{
+            add:function(){
+                console.log("调用内部add方法");
+            }
+        }
+    })
+app.add();
+</script>
+</body>
+</html>
