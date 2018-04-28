@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello word!</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>hello world! My Vue</h1>
+<hr />
+<!--
+    使用slot的方法分为两步
+    第一步 在自定义标签中定义slot属性
+    第二步  在模板中接受 定义slot 标签  成对出现
+-->
+<div id='myvue'>
+    <liulian>
+        <span slot="gitHub">{{liulianData.gitHub}}</span>
+        <span slot="name">{{liulianData.name}}</span>
+        <span slot="skill">{{liulianData.skill}}</span>
+    </liulian>
+</div>
+<!--vue2.0要求外边必须包裹一层div-->
+<template id="tem">
+    <div>
+        <p>gitHub:<slot name="gitHub"></slot></p>
+        <p>姓名：<slot name="name"></slot></p>
+        <p>技能：<slot name="skill"></slot></p>
+    </div>
+</template>
+
+<script type="text/javascript">
+    var soul={
+        template:'#tem'
+    }
+    var app = new Vue({
+        el:'#myvue',
+        data:{
+             liulianData:{
+                 gitHub:'https://github.com/liulian0519',
+                 name:'soull',
+                 skill:'vue'
+             }
+        },
+        components:{
+            "liulian":soul
+        }
+    })
+
+</script>
+</body>
+</html>
