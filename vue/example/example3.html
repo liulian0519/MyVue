@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>example event method</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>exapmle event method</h1>
+<hr />
+<div id='myvue'>
+    {{num}}
+    <p><button @click="add">增加</button></p>
+</div>
+    <p><button onclick="reduce()">减少</button></p>
+    <p><button onclick="reduceonce()">减少一次</button></p>
+<p><button onclick="off()">关闭</button></p>
+<script type="text/javascript">
+    var app = new Vue({
+        el:'#myvue',
+        data:{
+            num:1
+        },
+        methods:{
+            add:function(){
+                this.num++;
+            }
+        }
+    })
+    app.$on("reduce",function(){
+        console.log("执行了reduce事件");
+        this.num--;
+    })
+    app.$once("reduceonce",function(){
+        console.log("执行了reduceonce事件  只执行一次");
+        this.num--;
+    })
+    function reduce(){
+        app.$emit('reduce')    //调用reduce事件
+    }
+    function reduceonce(){
+        app.$emit('reduceonce')    //调用reduceonce事件
+    }
+    function off(){
+        app.$off('reduce');  //关闭了reduce 事件
+    }
+
+
+</script>
+</body>
+</html>
