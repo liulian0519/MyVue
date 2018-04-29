@@ -1,6 +1,12 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <!--很象a标签-->
+    <div>
+      <router-link to="/">首页</router-link>
+      <router-link to="/hi">Hi页面</router-link>
+    </div>
+
     <router-view/>
   </div>
 </template>
