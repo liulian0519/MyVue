@@ -12,12 +12,16 @@
         <button @click="$store.commit('add',5)">增加</button>
         <button @click="$store.commit('reduce')">减少</button>
       </p>
+      <p>
+        <button @click="addAction">增加</button>
+        <button @click="reduceAction">减少</button>
+      </p>
     </div>
 </template>
 
 <script>
   import store from '@/vuex/store'
-  import {mapState,mapMutations,mapGetters} from 'vuex'
+  import {mapState,mapMutations,mapGetters,mapActions} from 'vuex'
     export default {
         name: "Count",
       data(){
@@ -28,7 +32,7 @@
       // computed:mapState(['count']),
       computed:{
         ...mapState(['count']) ,
-        ...mapGetters(['count'])
+        // ...mapGetters(['count'])
         // count(){
         //   return  this.$store.getters.count;
         // }
@@ -44,7 +48,10 @@
       //     return this.$store.state.count;
       //   }
       // },
-      methods:mapMutations(['add','reduce']),
+      methods:{
+        ...mapMutations(['add','reduce']),
+        ...mapActions(['addAction','reduceAction'])
+      },
       store
     }
 </script>
