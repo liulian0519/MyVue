@@ -4,10 +4,12 @@ import HelloWorld from '@/components/HelloWorld'
 import Hi1 from '@/components/Hi1'
 import Hi2 from '@/components/Hi2'
 import Params from '@/components/Params'
-
+import Error from '@/components/Error'
 Vue.use(Router)
 
 export default new Router({
+  // mode:'history',  没有#
+  // mode:'hash',   有#
   routes: [
     //SPA单页应用的demo
     // {
@@ -55,6 +57,10 @@ export default new Router({
       path:'/hi1',
       component:Hi1,
       alias:'/liu'
+    },
+    {
+      path:'*',
+      component:Error
     }
 
   ]
