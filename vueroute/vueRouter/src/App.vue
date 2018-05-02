@@ -5,6 +5,8 @@
     <router-link to="/params/1996/liulian">params</router-link>|
     <router-link to="/goHome">goHome</router-link>|
     <router-link to="/goParams/1995/daidong">goParams</router-link>|
+    <router-link to="/hi1">hi1</router-link>|
+    <router-link to="/liu">liu</router-link>|
     <!--单页面多路由操作-->
     <router-view/>
     <!--<router-view name="left" style="float: left; width: 50%; height: 300px; background-color: #989898;"/>-->

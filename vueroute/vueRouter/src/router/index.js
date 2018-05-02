@@ -29,9 +29,11 @@ export default new Router({
     //     right:Hi1
     //   }
     // }
+
     //url传参 第一步：配置路由  注意冒号(括号里写正则表达式)
     //        第二步：在App.vue中用<routerlink>中的to传递参数
     //        第三步：在component中接收参数  注意div包裹
+    // alias:类似重定向
     {
       path:'/',
       name:'HelloWorld',
@@ -48,6 +50,11 @@ export default new Router({
     {
       path:'/goParams/:newsId(\\d+)/:newsTitle',
       redirect:'/params/:newsId(\\d+)/:newsTitle'
+    },
+    {
+      path:'/hi1',
+      component:Hi1,
+      alias:'/liu'
     }
 
   ]
