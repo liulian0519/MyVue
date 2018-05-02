@@ -17,7 +17,7 @@
 
 <script>
   import store from '@/vuex/store'
-  import {mapState,mapMutations} from 'vuex'
+  import {mapState,mapMutations,mapGetters} from 'vuex'
     export default {
         name: "Count",
       data(){
@@ -25,7 +25,15 @@
             msg:'Hello Vuex'
           }
       },
-      computed:mapState(['count']),
+      // computed:mapState(['count']),
+      computed:{
+        ...mapState(['count']) ,
+        ...mapGetters(['count'])
+        // count(){
+        //   return  this.$store.getters.count;
+        // }
+      },
+
       //第三种
       // computed:mapState({
       //   count:state=>state.count

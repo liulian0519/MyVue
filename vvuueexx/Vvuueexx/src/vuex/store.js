@@ -13,7 +13,15 @@ const mutations={
     state.count--;
   }
 }
+//感觉相当一个过滤器一样
+const getters={
+  count:function (state) {
+    return state.count+=10;
+  }
+}
+
 export default new Vuex.Store({
   state,
-  mutations
+  mutations,
+  getters
 })
