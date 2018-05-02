@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png"><br>
+    <div>
+      <button @click="goForm">前进</button>
+      <button @click="goBack">后退</button>
+      <button @click="goHome">返回首页</button>
+    </div>
     <router-link to="/">Home</router-link>|
     <router-link to="/params/1996/liulian">params</router-link>|
     <router-link to="/goHome">goHome</router-link>|
@@ -20,7 +25,18 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods:{
+    goForm(){
+      this.$router.go(1)
+    },
+    goBack(){
+      this.$router.go(-1)
+    },
+    goHome(){
+      this.$router.push('/')
+    }
+  }
 }
 </script>
 
