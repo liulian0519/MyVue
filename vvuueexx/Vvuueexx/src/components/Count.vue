@@ -10,7 +10,7 @@
       <h3>第一种：{{$store.state.count}} ---第四种：{{count}}</h3>
       <p>
         <button @click="$store.commit('add',5)">增加</button>
-        <button @click="$store.commit('reduce')">减少</button>
+        <button @click="reduce">减少</button>
       </p>
       <p>
         <button @click="addAction">增加</button>
