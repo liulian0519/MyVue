@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-
+    <i class="icon iconfont icon-dianpu"></i>
+    <i class="icon iconfont icon-yinliao01"></i>
     <router-view/>
   </div>
 </template>
