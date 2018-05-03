@@ -1,7 +1,7 @@
 <template>
     <div>
       <h2>
-        welcome to 小潼关！what can I do for you?
+        <!--welcome to 小潼关！what can I do for you?-->
       </h2>
     </div>
 </template>
