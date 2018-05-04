@@ -76,6 +76,7 @@
 </template>
 
 <script>
+  import axios from 'axios'
     export default {
         name: "Pos",
         data(){
@@ -97,132 +98,142 @@
                 count:1
               }
             ],
-            hotGoods:[
-              {
-                goodsId:1,
-                goodsName:'普通凉皮',
-                price:6
-              },
-              {
-                goodsId:2,
-                goodsName:'麻酱凉皮',
-                price:8
-              },
-              {
-                goodsId:3,
-                goodsName:'纯瘦肉加馍',
-                price:7
-              },
-              {
-                goodsId:4,
-                goodsName:'紫菜蛋花汤',
-                price:4
-              },
-              {
-                goodsId:5,
-                goodsName:'南瓜粥',
-                price:4
-              },
-              {
-                goodsId:6,
-                goodsName:'可口可乐',
-                price:2.5
-              },
-              {
-                goodsId:7,
-                goodsName:'砂锅米线',
-                price:9
-              },
-              {
-                goodsId:8,
-                goodsName:'招牌凉皮',
-                price:6.5
-              }
-            ],
-            type0Goods:[
-              {
-                goodsId:1,
-                goodsName:'普通凉皮',
-                price:6,
-                img:'http://img1.imgtn.bdimg.com/it/u=1717572801,3620482052&fm=200&gp=0.jpg'
-              },
-              {
-                goodsId:2,
-                goodsName:'麻酱凉皮',
-                price:8,
-                img:'http://img4.imgtn.bdimg.com/it/u=3460149761,3162029949&fm=27&gp=0.jpg'
-              },
-              {
-                goodsId:3,
-                goodsName:'纯瘦肉加馍',
-                price:7,
-                img:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2535625473,1024239213&fm=27&gp=0.jpg'
-
-              },
-              {
-                goodsId:4,
-                goodsName:'紫菜蛋花汤',
-                price:4,
-                img:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1047016638,1015728081&fm=27&gp=0.jpg'
-              },
-              {
-                goodsId:5,
-                goodsName:'美味南瓜粥',
-                price:4,
-                img:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=692183911,3234097572&fm=200&gp=0.jpg'
-              },
-              {
-                goodsId:6,
-                goodsName:'可口可乐',
-                price:2.5,
-                img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1140806848,2011110655&fm=200&gp=0.jpg'
-              },
-              {
-                goodsId:7,
-                goodsName:'砂锅米线',
-                price:9,
-                img:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=696266270,2835203644&fm=27&gp=0.jpg'
-              },
-              {
-                goodsId:8,
-                goodsName:'招牌凉皮',
-                price:6.5,
-                img:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2104274955,2117326591&fm=27&gp=0.jpg'
-              },
-              {
-                goodsId:9,
-                goodsName:'普通凉皮',
-                price:6,
-                img:'http://img1.imgtn.bdimg.com/it/u=1717572801,3620482052&fm=200&gp=0.jpg'
-              },
-              {
-                goodsId:10,
-                goodsName:'麻酱凉皮',
-                price:8,
-                img:'http://img4.imgtn.bdimg.com/it/u=3460149761,3162029949&fm=27&gp=0.jpg'
-              },
-              {
-                goodsId:11,
-                goodsName:'纯瘦肉加馍',
-                price:7,
-                img:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2535625473,1024239213&fm=27&gp=0.jpg'
-
-              },
-              {
-                goodsId:12,
-                goodsName:'紫菜蛋花汤',
-                price:4,
-                img:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1047016638,1015728081&fm=27&gp=0.jpg'
-              },
-              {
-                goodsId:13,
-                goodsName:'美味南瓜粥',
-                price:4,
-                img:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=692183911,3234097572&fm=200&gp=0.jpg'
-              }
-            ]
+            hotGoods:[],
+            type0Goods:[],
+            type1Goods:[],
+            type2Goods:[],
+            type3Goods:[]
+            // hotGoods:[
+            //   {
+            //     goodsId:1,
+            //     goodsName:'普通凉皮',
+            //     price:6
+            //   },
+            //   {
+            //     goodsId:2,
+            //     goodsName:'麻酱凉皮',
+            //     price:8
+            //   },
+            //   {
+            //     goodsId:3,
+            //     goodsName:'纯瘦肉加馍',
+            //     price:7
+            //   },
+            //   {
+            //     goodsId:4,
+            //     goodsName:'紫菜蛋花汤',
+            //     price:4
+            //   },
+            //   {
+            //     goodsId:5,
+            //     goodsName:'南瓜粥',
+            //     price:4
+            //   },
+            //   {
+            //     goodsId:6,
+            //     goodsName:'可口可乐',
+            //     price:2.5
+            //   },
+            //   {
+            //     goodsId:7,
+            //     goodsName:'砂锅米线',
+            //     price:9
+            //   },
+            //   {
+            //     goodsId:8,
+            //     goodsName:'招牌凉皮',
+            //     price:6.5
+            //   }
+            // ],
+            // type0Goods:[
+            //   {
+            //     goodsId:1,
+            //     goodsName:'普通凉皮',
+            //     price:6,
+            //     img:'http://img1.imgtn.bdimg.com/it/u=1717572801,3620482052&fm=200&gp=0.jpg'
+            //   },
+            //   {
+            //     goodsId:2,
+            //     goodsName:'麻酱凉皮',
+            //     price:8,
+            //     img:'http://img4.imgtn.bdimg.com/it/u=3460149761,3162029949&fm=27&gp=0.jpg'
+            //   },
+            //   {
+            //     goodsId:3,
+            //     goodsName:'纯瘦肉加馍',
+            //     price:7,
+            //     img:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2535625473,1024239213&fm=27&gp=0.jpg'
+            //
+            //   },
+            //   {
+            //     goodsId:4,
+            //     goodsName:'紫菜蛋花汤',
+            //     price:4,
+            //     img:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1047016638,1015728081&fm=27&gp=0.jpg'
+            //   },
+            //   {
+            //     goodsId:5,
+            //     goodsName:'美味南瓜粥',
+            //     price:4,
+            //     img:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=692183911,3234097572&fm=200&gp=0.jpg'
+            //   },
+            //   {
+            //     goodsId:6,
+            //     goodsName:'可口可乐',
+            //     price:2.5,
+            //     img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1140806848,2011110655&fm=200&gp=0.jpg'
+            //   },
+            //   {
+            //     goodsId:7,
+            //     goodsName:'砂锅米线',
+            //     price:9,
+            //     img:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=696266270,2835203644&fm=27&gp=0.jpg'
+            //   },
+            //   {
+            //     goodsId:8,
+            //     goodsName:'招牌凉皮',
+            //     price:6.5,
+            //     img:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2104274955,2117326591&fm=27&gp=0.jpg'
+            //   },
+            //   {
+            //     goodsId:9,
+            //     goodsName:'普通凉皮',
+            //     price:6,
+            //     img:'http://img1.imgtn.bdimg.com/it/u=1717572801,3620482052&fm=200&gp=0.jpg'
+            //   },
+            //   {
+            //     goodsId:10,
+            //     goodsName:'麻酱凉皮',
+            //     price:8,
+            //     img:'http://img4.imgtn.bdimg.com/it/u=3460149761,3162029949&fm=27&gp=0.jpg'
+            //   },
+            //   {
+            //     goodsId:11,
+            //     goodsName:'纯瘦肉加馍',
+            //     price:7,
+            //     img:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2535625473,1024239213&fm=27&gp=0.jpg'
+            //
+            //   },
+            //   {
+            //     goodsId:12,
+            //     goodsName:'紫菜蛋花汤',
+            //     price:4,
+            //     img:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1047016638,1015728081&fm=27&gp=0.jpg'
+            //   },
+            //   {
+            //     goodsId:13,
+            //     goodsName:'美味南瓜粥',
+            //     price:4,
+            //     img:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=692183911,3234097572&fm=200&gp=0.jpg'
+            //   }
+            // ]
           }
         },
+      created:function(){
+        axios.get()
+          .then()
+          .catch()
+      },
       mounted:function () {
         var orderhight = document.body.clientHeight;
         console.log(orderhight);
