@@ -50,7 +50,7 @@
                 <div>
                   <ul class="main-food">
                     <li v-for="items in type0Goods">
-                      <span class="foodImg"><img :src="items.img" width="80px" height="80px"></span>
+                      <span class="foodImg"><img :src="items.goodsImg" width="80px" height="80px"></span>
                       <span class="foodName">{{items.goodsName}}</span><br>
                       <span class="foodPrice">￥{{items.price}}元</span>
                     </li>
@@ -58,14 +58,38 @@
                 </div>
               </el-tab-pane>
 
-              <el-tab-pane label="酒水">
-                这是酒水页面
+              <el-tab-pane label="零食">
+                <div>
+                  <ul class="main-food">
+                    <li v-for="items in type1Goods">
+                      <span class="foodImg"><img :src="items.goodsImg" width="80px" height="80px"></span>
+                      <span class="foodName">{{items.goodsName}}</span><br>
+                      <span class="foodPrice">￥{{items.price}}元</span>
+                    </li>
+                  </ul>
+                </div>
+              </el-tab-pane>
+              <el-tab-pane label="饮料">
+                <div>
+                  <ul class="main-food">
+                    <li v-for="items in type2Goods">
+                      <span class="foodImg"><img :src="items.goodsImg" width="80px" height="80px"></span>
+                      <span class="foodName">{{items.goodsName}}</span><br>
+                      <span class="foodPrice">￥{{items.price}}元</span>
+                    </li>
+                  </ul>
+                </div>
               </el-tab-pane>
               <el-tab-pane label="套餐">
-                这是套餐页面
-              </el-tab-pane>
-              <el-tab-pane label="零食">
-                这是零食页面
+                <div>
+                  <ul class="main-food">
+                    <li v-for="items in type3Goods">
+                      <span class="foodImg"><img :src="items.goodsImg" width="80px" height="80px"></span>
+                      <span class="foodName">{{items.goodsName}}</span><br>
+                      <span class="foodPrice">￥{{items.price}}元</span>
+                    </li>
+                  </ul>
+                </div>
               </el-tab-pane>
             </el-tabs>
           </div>
@@ -77,6 +101,7 @@
 
 <script>
   import axios from 'axios'
+
     export default {
         name: "Pos",
         data(){
@@ -230,9 +255,28 @@
           }
         },
       created:function(){
-        axios.get()
-          .then()
-          .catch()
+        axios.get('http://jspang.com/DemoApi/oftenGoods.php')
+          .then(response=>{
+           // console.log(response);
+            this.hotGoods = response.data;
+          })
+          .catch(error=>{
+            // console.log(error);
+            alert('网络错误，不能访问');
+          })
+        axios.get('http://jspang.com/DemoApi/typeGoods.php')
+          .then(response=>{
+             console.log(response);
+             this.type0Goods=response.data[0];
+            this.type1Goods=response.data[1];
+            this.type2Goods=response.data[2];
+            this.type3Goods=response.data[3];
+            // this.hotGoods = response.data;
+          })
+          .catch(error=>{
+            // console.log(error);
+            alert('网络错误，不能访问');
+          })
       },
       mounted:function () {
         var orderhight = document.body.clientHeight;
@@ -240,6 +284,7 @@
         document.getElementById('order-list').style.height=orderhight+'px';
       }
     }
+
 </script>
 
 <style scoped>
@@ -292,6 +337,12 @@
   padding-left: 10px;
   color: brown;
   padding-top: 10px;
+  /*设置超过下列宽度时，超过的部分用...替代*/
+  width: 90px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  -o-text-overflow:ellipsis;
+  overflow:hidden;
 }
   .foodPrice{
     font-size: 16px;
