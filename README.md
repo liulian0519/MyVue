@@ -6,5 +6,5 @@
 |vuecli|脚手架+vue-route简介|https://github.com/liulian0519/MyVue/blob/master/vuecli/vuecliTest/index.html|
 |vueroute|Vue-route入门demo|https://github.com/liulian0519/MyVue/blob/master/vueroute/vueRouter/src/main.js|
 |vvuueexx|vuex入门|https://github.com/liulian0519/MyVue/blob/master/vvuueexx/Vvuueexx/src/main.js|
-|amzingPos|实战收银系统|学习ing|
+|amzingPos|实战收银系统|npm run dev localhost:8080|
 	
