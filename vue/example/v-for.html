@@ -9,16 +9,59 @@
 		<h1>hello v-for</h1>
 		<hr />
 		<div id='myvue'>
+			<p> 排好序的数组</p>
 			<div v-for ="item in sortItem">
 				{{item}}
 			</div>
+			<p>有标号的数组</p>
+			<div v-for="(item,index) in list">
+				{{item.name}}--{{item.price}}--{{index}}
+			</div>
+			<p>这是一个对象</p>
+			<div v-for="(value,key) in objList">
+				{{key}}:{{value}}
+			</div>
+			<hr>
+			<button v-on:click="addItem">
+				addItem
+			</button>
 		</div>
 		
 		<script type="text/javascript">
 			var app = new Vue({
 				el:'#myvue',
 				data:{
-					items:[12,58,23,46,17,29]
+					items:[12,58,23,46,17,29],
+					list:[
+						{
+						    name:'apple',
+							price:7
+						},
+						{
+						    name:'banana',
+							price:8
+						}
+
+					],
+					objList:{
+					    name:'liulian',
+						sex:'famel',
+						age:20,
+						hobby:'eat'
+					}
+				},
+				methods:{
+				  addItem () {
+				      // 点击按钮增加一项
+					 // this.list.push({
+						//  name:'orange',
+						//   price:9
+					 // })
+						Vue.set(this.list,1,{
+                            name:'orange',
+                             price:9
+						})
+                  }
 				},
 				computed:{
 					sortItem:function(){

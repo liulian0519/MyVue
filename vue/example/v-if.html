@@ -11,14 +11,26 @@
 		<div id='myvue'>
 			<div v-if="isLogin">hello soul</div>
 			<div v-else>sorry</div>
+			<a v-if="ispartA">partA</a>
+			<a v-show="!ispartA">partB</a>
+			<button v-on:click="gool">切换</button>
 		</div>
-		
+
+
 		<script type="text/javascript">
 			var app = new Vue({
 				el:'#myvue',
 				data:{
-					isLogin:false
+					isLogin:false,
+                    ispartA:true
+				},
+				methods:{
+				    gool:function(){
+				        console.log(this.ispartA);
+				        this.ispartA = !this.ispartA
+					}
 				}
+
 			})
 			
 		</script>
