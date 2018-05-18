@@ -1,10 +1,13 @@
 <template>
   <div id="app">
-
+      <input v-model="hello" type="text">{{hellowithoutnumber}}
     <comA @my-event="onCon"></comA>
     <!--<img src="./assets/logo.png">-->
     <!--<router-view/>-->
-
+  <select v-model="selects">
+    <option v-for="item in selectoption" :value="item.value">{{item.text}}</option>
+  </select>
+    {{selects}}
   </div>
 </template>
 
@@ -15,9 +18,35 @@ export default {
   components:{
     comA
   },
+  data(){
+    return{
+      hello:'',
+      selects:' ',
+      selectoption:[
+        {
+          text:'apple',
+          value: 0
+        },
+        {
+          text:'babanb',
+          value:1
+        },
+        {
+          text:'kfkfk',
+          value:2
+        }
+      ]
+    }
+
+  },
   methods:{
     onCon(parmfromA){
       console.log("fgjknfdklgmfkg"+parmfromA)
+    }
+  },
+  computed:{
+    hellowithoutnumber(){
+      return this.hello.replace(/\d/g,'')
     }
   }
 }
