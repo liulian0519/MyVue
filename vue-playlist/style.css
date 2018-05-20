@@ -3,3 +3,21 @@
     height: 400px;
     border: 1px solid #ffccff;
 }
+span{
+    background: red;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    margin: 10px 0px ;
+}
+.changecolor span{
+    background: green;
+    /*display: inline-block;*/
+
+    /*color: #fff;*/
+
+}
+.changelength span:after{
+    content: 'length';
+    margin-left: 10px;
+}

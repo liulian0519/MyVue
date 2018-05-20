@@ -8,31 +8,57 @@
 </head>
 <body>
 <!--跟容器-->
-<div id="app">
-    <h1>{{ greet('morning') }}</h1>
-    <p>{{ name }}</p>
-    <p>{{ job }}</p>
-    <a :href=' website'>GitHub</a>
-    <input type="text" :value="job">
-    <p v-html="websiteTag"> </p>
-    <hr>
-    <h1>events</h1>
-    <button v-on:click="add(1)">加1岁</button>
-    <button v-on:click="redu(1)">减1岁</button>
-    <button v-on:dblclick="add(10)">双击加10岁</button>
-    <button v-on:dblclick="redu(10)">双击减10岁</button>
-    <p>my age is {{age}}</p>
+<!--<div id="app">-->
+    <!--<h1>{{ greet('morning') }}</h1>-->
+    <!--<p>{{ name }}</p>-->
+    <!--<p>{{ job }}</p>-->
+    <!--<a :href=' website'>GitHub</a>-->
+    <!--<input type="text" :value="job">-->
+    <!--<p v-html="websiteTag"> </p>-->
+    <!--<hr>-->
+    <!--<h1>events</h1>-->
+    <!--<button v-on:click="add(1)">加1岁</button>-->
+    <!--<button v-on:click="redu(1)">减1岁</button>-->
+    <!--<button v-on:dblclick="add(10)">双击加10岁</button>-->
+    <!--<button v-on:dblclick="redu(10)">双击减10岁</button>-->
+    <!--<p>my age is {{age}}</p>-->
 
-    <div id="canvas" v-on:mousemove="mouseon">
-        {{X}} , {{Y}} - <span @mousemove.stop="">stop moving</span>
-    </div>
+    <!--<div id="canvas" v-on:mousemove="mouseon">-->
+        <!--{{X}} , {{Y}} - <span @mousemove.stop="">stop moving</span>-->
+    <!--</div>-->
+    <!--<hr>-->
+    <!--<h1>键盘事件</h1>-->
+        <!--<label>姓名：</label>-->
+        <!--<input ref="name" type="text" @keyup="logName" v-model="name">-->
+    <!--<span>{{name}}</span>-->
+    <!--<label>年龄：</label>-->
+    <!--<input type="text" @keyup="logAge" v-model="age">-->
+    <!--<span>{{age}}</span>-->
+<!--</div>-->
+<!--从下边开始时计算属性的内容-->
+<div id="app">
+    <h1>计算属性</h1>
+    <button @click="a++">Add to A</button>
+    <button @click="b++">Add to B</button>
+    <p>A - {{a}}</p>
+    <p>B - {{b}}</p>
+    <p>age+a = {{addToA}}</p>
+    <p>age+b= {{addToB}}</p>
     <hr>
-    <h1>键盘事件</h1>
-        <label>姓名：</label>
-        <input type="text" @keyup.enter="logName">
-    <label>年龄：</label>
-    <input type="text" @keyup.alt.enter="logAge">
+    <h1>动态css class</h1>
+    <h2>实例1</h2>
+    <!--<div @click="changecolor=!changecolor" :class="{changecolor:changecolor}">-->
+        <!--<span>LiuLian</span>-->
+    <!--</div>-->
+    <h2>实例2</h2>
+    <button v-on:click="changecolor=!changecolor">change color</button>
+    <button v-on:click="changelength=!changelength">change length</button>
+    <div v-bind:class="comparClass">
+        <span>liulian</span>
+    </div>
 </div>
+<hr>
+
 <script src="app.js"></script>
 </body>
 </html>
