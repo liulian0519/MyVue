@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue component</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <div id="app-one">
+        <greeting></greeting>
+    </div>
+    <div id="app-two">
+        <greeting></greeting>
+
+    </div>
+
+
+    <script type="text/javascript">
+        Vue.component("greeting",{
+            template:`
+                <p>
+                    {{name}}:大家好，这是我的女朋友
+                    <button @click="changename">改名</button>
+                 </p>
+
+                        `,
+            data:function () {
+                return{
+                    name:"鹿晗"
+                }
+            },
+            methods:{
+                changename:function () {
+                    this.name="代栋"
+                }
+            }
+
+        })
+        var app = new Vue({
+            el:'#app-one'
+        });
+        var appt = new Vue({
+            el:'#app-two'
+        })
+
+    </script>
+
+</body>
+</html>
