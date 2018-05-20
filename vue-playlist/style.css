@@ -1,23 +1,52 @@
-#canvas{
-    width: 600px;
-    height: 400px;
-    border: 1px solid #ffccff;
-}
-span{
-    background: red;
-    display: inline-block;
-    padding: 10px;
-    color: #fff;
-    margin: 10px 0px ;
-}
-.changecolor span{
-    background: green;
+/*#canvas{*/
+    /*width: 600px;*/
+    /*height: 400px;*/
+    /*border: 1px solid #ffccff;*/
+/*}*/
+/*span{*/
+    /*background: red;*/
     /*display: inline-block;*/
-
+    /*padding: 10px;*/
     /*color: #fff;*/
+    /*margin: 10px 0px ;*/
+/*}*/
+/*.changecolor span{*/
+    /*background: green;*/
+    /*!*display: inline-block;*!*/
 
+    /*!*color: #fff;*!*/
+
+/*}*/
+/*.changelength span:after{*/
+    /*content: 'length';*/
+    /*margin-left: 10px;*/
+/*}*/
+/*//从下边开始一个小demo*/
+#bag{
+    width: 200px;
+    height: 500px;
+    margin: 0 auto;
+    background: url("image/bag.png") center no-repeat;
+    background-size: 80%;
 }
-.changelength span:after{
-    content: 'length';
-    margin-left: 10px;
+#bag.burst{
+   background-image:url("image/bag-burst.png");
+}
+#bag-health{
+    width: 200px;
+    border: 2px #000 solid;
+    margin: 0 auto 20px auto;
+}
+#bag-health div{
+
+    /*width: 200px; */
+    height: 20px;
+    background: crimson;
+}
+#controls{
+    width: 200px;
+    margin: 0 auto;
+}
+#controls button{
+    margin-left: 20px;
 }

@@ -41,35 +41,55 @@
 * data:用于数据的存储
 * */
 //从下边开始是计算属性的位置
+// new Vue({
+//     el:'#app',
+//     data:{
+//         a:0,
+//         b:0,
+//         age:20,
+//         changecolor:false,
+//         changelength:false
+//     },
+//     methods:{
+//         // addToA:function () {
+//         //     return this.age+this.a
+//         // },
+//         // addToB:function () {
+//         //     return this.age+this.b
+//         // }
+//     },
+//     computed:{
+//         addToA:function () {
+//             return this.age+this.a
+//         },
+//         addToB:function () {
+//             return this.age+this.b
+//         },
+//         comparClass:function () {
+//             return {
+//                 changecolor:this.changecolor,
+//                 changelength:this.changelength
+//             }
+//         }
+//     }
+// })
+//从下边开始一个小demo
 new Vue({
     el:'#app',
     data:{
-        a:0,
-        b:0,
-        age:20,
-        changecolor:false,
-        changelength:false
+        health:100,
+        ended:false
     },
     methods:{
-        // addToA:function () {
-        //     return this.age+this.a
-        // },
-        // addToB:function () {
-        //     return this.age+this.b
-        // }
-    },
-    computed:{
-        addToA:function () {
-            return this.age+this.a
-        },
-        addToB:function () {
-            return this.age+this.b
-        },
-        comparClass:function () {
-            return {
-                changecolor:this.changecolor,
-                changelength:this.changelength
+        punch:function () {
+            this.health -= 10
+            if(this.health<=0){
+                this.ended = true
             }
+        },
+        restart:function () {
+            this.health = 100
+            this.ended=false;
         }
     }
 })

@@ -36,29 +36,44 @@
     <!--<span>{{age}}</span>-->
 <!--</div>-->
 <!--从下边开始时计算属性的内容-->
-<div id="app">
-    <h1>计算属性</h1>
-    <button @click="a++">Add to A</button>
-    <button @click="b++">Add to B</button>
-    <p>A - {{a}}</p>
-    <p>B - {{b}}</p>
-    <p>age+a = {{addToA}}</p>
-    <p>age+b= {{addToB}}</p>
-    <hr>
-    <h1>动态css class</h1>
-    <h2>实例1</h2>
-    <!--<div @click="changecolor=!changecolor" :class="{changecolor:changecolor}">-->
-        <!--<span>LiuLian</span>-->
+<!--<div id="app">-->
+    <!--<h1>计算属性</h1>-->
+    <!--<button @click="a++">Add to A</button>-->
+    <!--<button @click="b++">Add to B</button>-->
+    <!--<p>A - {{a}}</p>-->
+    <!--<p>B - {{b}}</p>-->
+    <!--<p>age+a = {{addToA}}</p>-->
+    <!--<p>age+b= {{addToB}}</p>-->
+    <!--<hr>-->
+    <!--<h1>动态css class</h1>-->
+    <!--<h2>实例1</h2>-->
+    <!--&lt;!&ndash;<div @click="changecolor=!changecolor" :class="{changecolor:changecolor}">&ndash;&gt;-->
+        <!--&lt;!&ndash;<span>LiuLian</span>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--<h2>实例2</h2>-->
+    <!--<button v-on:click="changecolor=!changecolor">change color</button>-->
+    <!--<button v-on:click="changelength=!changelength">change length</button>-->
+    <!--<div v-bind:class="comparClass">-->
+        <!--<span>liulian</span>-->
     <!--</div>-->
-    <h2>实例2</h2>
-    <button v-on:click="changecolor=!changecolor">change color</button>
-    <button v-on:click="changelength=!changelength">change length</button>
-    <div v-bind:class="comparClass">
-        <span>liulian</span>
+<!--</div>-->
+<!--<hr>-->
+<!--//从下边开始一个小demo-->
+<div id="app">
+    <!--图片-->
+    <div id="bag" :class="{burst:ended}"></div>
+
+    <!--进度情况-->
+    <div id="bag-health">
+        <div :style="{width:health + '%'}"></div>
+    </div>
+
+    <!--按钮控制-->
+    <div id="controls" >
+        <button @click="punch" v-show="!ended">使劲敲</button>
+        <button @click="restart">重新开始</button>
     </div>
 </div>
-<hr>
-
 <script src="app.js"></script>
 </body>
 </html>
