@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<!--跟容器-->
+<div id="app">
+    <h1>{{ greet('morning') }}</h1>
+    <p>{{ name }}</p>
+    <p>{{ job }}</p>
+    <a :href=' website'>GitHub</a>
+    <input type="text" :value="job">
+    <p v-html="websiteTag"> </p>
+    <hr>
+    <h1>events</h1>
+    <button v-on:click="add(1)">加1岁</button>
+    <button v-on:click="redu(1)">减1岁</button>
+    <button v-on:dblclick="add(10)">双击加10岁</button>
+    <button v-on:dblclick="redu(10)">双击减10岁</button>
+    <p>my age is {{age}}</p>
+
+    <div id="canvas" v-on:mousemove="mouseon">
+        {{X}} , {{Y}} - <span @mousemove.stop="">stop moving</span>
+    </div>
+    <hr>
+    <h1>键盘事件</h1>
+        <label>姓名：</label>
+        <input type="text" @keyup.enter="logName">
+    <label>年龄：</label>
+    <input type="text" @keyup.alt.enter="logAge">
+</div>
+<script src="app.js"></script>
+</body>
+</html>
