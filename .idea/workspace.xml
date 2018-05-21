@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e77acf62-9425-4e90-853c-28eb5c5229a8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/vue-playlist/playlist/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-playlist/playlist/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-playlist/playlist/src/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-playlist/playlist/src/components/Footer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-playlist/playlist/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-playlist/playlist/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-playlist/playlist/src/components/Users.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-playlist/playlist/src/components/Users.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vue-playlist/playlist/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+            <state relative-caret-position="609">
+              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding>
                 <element signature="e#314#362#0" expanded="true" />
               </folding>
@@ -49,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Header.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Header.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue-playlist/playlist/src/components/Header.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+            <state relative-caret-position="483">
+              <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -89,9 +87,9 @@
         <option value="$PROJECT_DIR$/vue-playlist/playlist/src/components/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/vue-playlist/playlist/src/main.js" />
         <option value="$PROJECT_DIR$/vue-playlist/playlist/src/components/Users.vue" />
-        <option value="$PROJECT_DIR$/vue-playlist/playlist/src/App.vue" />
         <option value="$PROJECT_DIR$/vue-playlist/playlist/src/components/Footer.vue" />
         <option value="$PROJECT_DIR$/vue-playlist/playlist/src/components/Header.vue" />
+        <option value="$PROJECT_DIR$/vue-playlist/playlist/src/App.vue" />
       </list>
     </option>
   </component>
@@ -116,7 +114,8 @@
     <handled-path value="$PROJECT_DIR$/vvuueexx/Vvuueexx/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="510" />
+    <option name="x" value="236" />
+    <option name="y" value="12" />
     <option name="width" value="1445" />
     <option name="height" value="1040" />
   </component>
@@ -212,15 +211,15 @@
       <workItem from="1526798727739" duration="8864000" />
       <workItem from="1526813374948" duration="5386000" />
       <workItem from="1526822526520" duration="3337000" />
-      <workItem from="1526879592337" duration="10081000" />
+      <workItem from="1526879592337" duration="11536000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48033000" />
+    <option name="totallyTimeSpent" value="49488000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="408" y="0" width="1156" height="832" extended-state="0" />
+    <frame x="189" y="10" width="1156" height="832" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22591944" />
@@ -593,16 +592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue-playlist/playlist/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-          <folding>
-            <element signature="e#314#362#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue-playlist/playlist/src/components/Users.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -619,8 +608,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vue-playlist/playlist/src/components/Header.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        <state relative-caret-position="483">
+          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-playlist/playlist/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding>
+            <element signature="e#314#362#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -20,7 +20,8 @@
       },
       methods:{
         change:function () {
-          this.title="我被修改了"
+          // this.title="我被修改了"
+          this.$emit("titleChange","子组件向父组件传值")   //注册一个事件
         }
       }
     }

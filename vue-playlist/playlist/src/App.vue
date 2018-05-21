@@ -2,7 +2,7 @@
 <template>
   <div id="app">
 
-    <app-header :title = "title"></app-header>
+    <app-header @titleChange="updatetitle($event)" :title = "title"></app-header>
     <users :users="users"></users>
     <app-footer :title = "title"></app-footer>
 
@@ -25,6 +25,12 @@ export default {
     "app-header":Header,
     "app-footer":Footer
   },
+  methods:{
+    updatetitle(ti){
+      this.title = ti
+    }
+  },
+
   data(){
     return{
       // title:"jfkmvmf"
