@@ -2,12 +2,10 @@
 <template>
   <div id="app">
 
-    <app-header></app-header>
-    <users></users>
-    <app-footer></app-footer>
-    <!--<img src="./assets/logo.png">-->
-    <!--<HelloWorld/>   <!--<img src="./assets/logo.png">-->
-    <!--<HelloWorld/>-->
+    <app-header :title = "title"></app-header>
+    <users :users="users"></users>
+    <app-footer :title = "title"></app-footer>
+
   </div>
 </template>
 <!--模板结束-->
@@ -22,7 +20,6 @@ export default {
   name: 'App',
   components: {
 
-
     // HelloWorld+
     "users":Users,
     "app-header":Header,
@@ -30,7 +27,19 @@ export default {
   },
   data(){
     return{
-      title:"jfkmvmf"
+      // title:"jfkmvmf"
+      users:[
+        { name:"liulian", position:"web开发", show:false  },
+        { name:"soul", position:"前端开发", show:false  },
+        { name:"daidong", position:"Android开发", show:false  },
+        { name:"dachui", position:"小程序开发", show:false  },
+        { name:"ll", position:"H5开发", show:false  },
+        { name:"dd", position:"前端开发", show:false  },
+        { name:"dc", position:"AI开发", show:false  },
+        { name:"dd", position:"前端开发", show:false  },
+        { name:"dc", position:"AI开发", show:false  }
+      ],
+      title:"正在传值..."
     }
 
   }

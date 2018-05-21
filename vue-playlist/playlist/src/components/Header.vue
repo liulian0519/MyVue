@@ -1,5 +1,6 @@
 <template>
-    <header>
+    <header @click="change">
+      <h1>{{title1}}</h1>
       <h1>{{title}}</h1>
     </header>
 </template>
@@ -7,10 +8,20 @@
 <script>
     export default {
         name: "app-header",
+      props:{
+        title:{
+          type:String
+        }
+      },
       data(){
           return{
-            title:'HelloWorld'
+            title1:'HelloWorld'
           }
+      },
+      methods:{
+        change:function () {
+          this.title="我被修改了"
+        }
       }
     }
 </script>

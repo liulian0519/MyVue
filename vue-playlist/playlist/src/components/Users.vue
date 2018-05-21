@@ -14,19 +14,16 @@
 <script>
     export default {
         name: "Users",
+      // props:["users"],
+      props:{
+        users:{
+          type:Array,
+          required:true
+        }
+      },
       data(){
           return{
-            users:[
-              { name:"liulian", position:"web开发", show:false  },
-              { name:"soul", position:"前端开发", show:false  },
-              { name:"daidong", position:"Android开发", show:false  },
-              { name:"dachui", position:"小程序开发", show:false  },
-              { name:"ll", position:"H5开发", show:false  },
-              { name:"dd", position:"前端开发", show:false  },
-              { name:"dc", position:"AI开发", show:false  },
-              { name:"dd", position:"前端开发", show:false  },
-              { name:"dc", position:"AI开发", show:false  }
-            ]
+
           }
       }
     }
