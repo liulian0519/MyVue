@@ -1,6 +1,11 @@
 <!--1模板开始-->
 <template>
   <div id="app">
+    <ul>
+      <!--跳转页面时不刷新不像a标签那样-->
+      <li><router-link to="/">HOME</router-link></li>
+      <li><router-link to="/helloworld">HelloWorld</router-link></li>
+    </ul>
     <router-view></router-view>
   </div>
 </template>

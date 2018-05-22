@@ -15,7 +15,9 @@ const router = new VueRouter({
   routes:[
     {path:'/',component:Home},
     {path:'/helloworld',component:HelloWorld}
-  ]
+  ],
+  //删掉那个#号
+  mode:'history'
 })
 
 //全局注册组件
